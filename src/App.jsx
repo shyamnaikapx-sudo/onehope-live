@@ -615,171 +615,13 @@ function App() {
   </div>
 
 </section>
-{/* TRAINING PLATFORM */}
+{/* AI TRAINING EXPERT */}
 
-<section
-  id="training"
-  className="py-24 bg-white"
->
+<section className="py-20 bg-white">
 
-  <div className="max-w-7xl mx-auto px-6">
+  <div className="max-w-6xl mx-auto px-6">
 
-    <div className="text-center">
-
-      <h1 className="text-5xl font-extrabold text-blue-950">
-        AI TRAINING PLATFORM
-      </h1>
-
-      <p className="text-gray-600 text-xl mt-6 max-w-4xl mx-auto leading-9">
-        Learn Pharma GMP, QA/QC, Regulatory Affairs, Validation,
-        Audit Readiness and Career Skills with AI-powered training
-        support and industry experts.
-      </p>
-
-    </div>
-
-    {/* MODULES */}
-
-    <div className="grid lg:grid-cols-2 gap-8 mt-16">
-
-      {/* MODULE 1 */}
-
-      <div className="bg-[#f4f7fb] rounded-[35px] p-8 shadow-lg">
-
-        <h2 className="text-3xl font-extrabold text-blue-950">
-          📁 Module 1: GMP Basics
-        </h2>
-
-        <ul className="mt-6 space-y-4 text-gray-700 text-lg leading-8">
-
-          <li>• Principles</li>
-          <li>• Documentation</li>
-          <li>• Facility</li>
-
-        </ul>
-
-      </div>
-
-      {/* MODULE 2 */}
-
-      <div className="bg-[#f4f7fb] rounded-[35px] p-8 shadow-lg">
-
-        <h2 className="text-3xl font-extrabold text-blue-950">
-          📁 Module 2: QA/QC Training
-        </h2>
-
-        <ul className="mt-6 space-y-4 text-gray-700 text-lg leading-8">
-
-          <li>• SOPs</li>
-          <li>• Validation</li>
-          <li>• Deviations</li>
-
-        </ul>
-
-      </div>
-
-      {/* MODULE 3 */}
-
-      <div className="bg-[#f4f7fb] rounded-[35px] p-8 shadow-lg">
-
-        <h2 className="text-3xl font-extrabold text-blue-950">
-          📁 Module 3: Regulatory Affairs
-        </h2>
-
-        <ul className="mt-6 space-y-4 text-gray-700 text-lg leading-8">
-
-          <li>• Dossier</li>
-          <li>• Country requirements</li>
-          <li>• Compliance</li>
-
-        </ul>
-
-      </div>
-
-      {/* MODULE 4 */}
-
-      <div className="bg-[#f4f7fb] rounded-[35px] p-8 shadow-lg">
-
-        <h2 className="text-3xl font-extrabold text-blue-950">
-          📁 Module 4: Audit & Inspection
-        </h2>
-
-        <ul className="mt-6 space-y-4 text-gray-700 text-lg leading-8">
-
-          <li>• Preparation</li>
-          <li>• Observations</li>
-          <li>• CAPA</li>
-
-        </ul>
-
-      </div>
-
-      {/* MODULE 5 */}
-
-      <div className="bg-[#f4f7fb] rounded-[35px] p-8 shadow-lg lg:col-span-2">
-
-        <h2 className="text-3xl font-extrabold text-blue-950">
-          📁 Module 5: Career Training
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-
-          <div className="bg-white rounded-2xl p-6 shadow">
-
-            <h3 className="font-bold text-xl text-blue-900">
-              Interview Prep
-            </h3>
-
-            <p className="mt-3 text-gray-600 leading-7">
-              Prepare for Pharma industry interviews with practical guidance.
-            </p>
-
-          </div>
-
-
-          <div className="bg-white rounded-2xl p-6 shadow">
-
-            <h3 className="font-bold text-xl text-blue-900">
-              Industry Basics
-            </h3>
-
-            <p className="mt-3 text-gray-600 leading-7">
-              Understand Pharma manufacturing, QA, QC and GMP operations.
-            </p>
-
-          </div>
-
-          <div className="bg-white rounded-2xl p-6 shadow">
-
-            <h3 className="font-bold text-xl text-blue-900">
-              Skill Building
-            </h3>
-
-            <p className="mt-3 text-gray-600 leading-7">
-              Build practical industry skills required for career growth.
-            </p>
-<div className="bg-white rounded-2xl p-6 shadow">
-
-  <h3 className="font-bold text-xl text-blue-900">
-    Interview Preparation
-  </h3>
-
-  <p className="mt-3 text-gray-600 leading-7">
-    Practice Pharma QA, QC, Production, Regulatory and GMP interview questions with AI guidance and expert support.
-  </p>
-
-</div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    {/* AI TRAINING EXPERT */}
-
-    <div className="mt-20 bg-gradient-to-r from-blue-950 to-blue-800 rounded-[40px] p-12 text-white shadow-2xl">
+    <div className="bg-gradient-to-r from-blue-950 to-blue-800 rounded-[40px] p-12 text-white shadow-2xl">
 
       <div className="grid lg:grid-cols-2 gap-12 items-center">
 
@@ -791,7 +633,7 @@ function App() {
 
           <p className="mt-6 text-xl leading-9 text-gray-200">
 
-            Learn faster with AI-powered Pharma training support.
+            Learn Pharma GMP, QA/QC, Regulatory Affairs and industry skills with AI-powered guidance.
 
           </p>
 
@@ -800,7 +642,8 @@ function App() {
             <p>✅ Ask anything</p>
             <p>✅ Get training</p>
             <p>✅ Practice concepts</p>
-            <p>✅ Learn industry compliance</p>
+            <p>✅ Interview preparation</p>
+            <p>✅ Industry basics</p>
 
           </div>
 
