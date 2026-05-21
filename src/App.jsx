@@ -14,6 +14,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 function App() {
+
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
@@ -22,6 +23,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   const askAI = async () => {
+
     if (!name || !company || !email) {
       alert("Please fill Name, Company and Email");
       return;
@@ -35,6 +37,7 @@ function App() {
     setLoading(true);
 
     try {
+
       const response = await fetch(
         "https://onehope-live.onrender.com/api/ask-ai",
         {
@@ -56,99 +59,28 @@ function App() {
       const data = await response.json();
 
       setAnswer(data.answer);
+
     } catch (error) {
+
       setAnswer("AI service temporarily unavailable.");
+
     }
 
     setLoading(false);
   };
-{/* EXPERT SUPPORT */}
 
-<section className="py-20 bg-white">
-
-  <div className="max-w-7xl mx-auto px-6">
-
-    <div className="grid lg:grid-cols-2 gap-10 items-center">
-
-      <div>
-
-        <h1 className="text-5xl font-extrabold text-blue-950">
-          Expert-Led Support
-        </h1>
-
-        <p className="mt-8 text-xl leading-10 text-gray-600">
-
-          Our team combines 20+ years of industry experience
-          with AI-powered efficiency to deliver faster and smarter
-          compliance solutions.
-
-        </p>
-
-        <div className="mt-10 space-y-5 text-lg text-gray-700">
-
-          <p>✅ GMP & Regulatory Consulting</p>
-
-          <p>✅ Audit & Inspection Readiness</p>
-
-          <p>✅ Validation & Documentation Support</p>
-
-          <p>✅ QA/QC Compliance Systems</p>
-
-        </div>
-
-      </div>
-
-      <div className="bg-[#f4f7fb] rounded-[35px] p-10 shadow-xl">
-
-        <h2 className="text-4xl font-extrabold text-blue-950">
-          Trusted Industry Support
-        </h2>
-
-        <p className="mt-6 text-lg leading-9 text-gray-600">
-
-          We support Pharma, Nutraceutical, API and Food companies
-          with end-to-end compliance and regulatory solutions.
-
-        </p>
-
-        <div className="grid grid-cols-2 gap-5 mt-10">
-
-          <div className="bg-white rounded-2xl p-5 shadow text-center font-bold text-blue-900">
-            Pharma
-          </div>
-
-          <div className="bg-white rounded-2xl p-5 shadow text-center font-bold text-blue-900">
-            API
-          </div>
-
-          <div className="bg-white rounded-2xl p-5 shadow text-center font-bold text-blue-900">
-            Nutraceutical
-          </div>
-
-          <div className="bg-white rounded-2xl p-5 shadow text-center font-bold text-blue-900">
-            Food Industry
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
   const services = [
+
     {
       no: "01",
       title: "NEW FACILITY PROJECTS",
       services: [
         "Cleanroom Design",
-        "Factory Setup (Pharma, API, Food)",
+        "Factory Setup",
         "HVAC & Validation",
       ],
       promise:
-        "We design and build your complete GMP-compliant facility from scratch.",
+        "Complete GMP-compliant facility setup and execution.",
       icon: <FaIndustry />,
     },
 
@@ -157,11 +89,11 @@ function App() {
       title: "AUDIT & COMPLIANCE",
       services: [
         "GMP Audits",
-        "US FDA/ISO Gap Analysis",
+        "Gap Analysis",
         "Third-Party Audits",
       ],
       promise:
-        "We inspect your facility through an auditor’s lens before inspection.",
+        "Inspection readiness and compliance support.",
       icon: <FaClipboardCheck />,
     },
 
@@ -170,11 +102,11 @@ function App() {
       title: "QMS & ISO CERTIFICATION",
       services: [
         "QMS Setup",
-        "ISO 9001, 22000, FSSC, BRCGS",
+        "ISO Certifications",
         "Documentation",
       ],
       promise:
-        "We build your quality systems from the ground up for certification.",
+        "End-to-end quality management system implementation.",
       icon: <FaCertificate />,
     },
 
@@ -184,10 +116,10 @@ function App() {
       services: [
         "CTD/eCTD",
         "Documentation",
-        "Regulatory Submissions",
+        "Submissions",
       ],
       promise:
-        "We prepare every document required for approvals and submissions.",
+        "Regulatory support for approvals and exports.",
       icon: <FaClipboardCheck />,
     },
 
@@ -195,12 +127,12 @@ function App() {
       no: "05",
       title: "VALIDATION & QUALIFICATION",
       services: [
-        "Cleanroom Validation",
+        "Process Validation",
         "Equipment Qualification",
         "HVAC Testing",
       ],
       promise:
-        "We test and certify your systems according to GMP standards.",
+        "Validation and qualification as per GMP standards.",
       icon: <FaFlask />,
     },
 
@@ -208,31 +140,19 @@ function App() {
       no: "06",
       title: "TRAINING & SUPPORT",
       services: [
-        "GMP & SOP Training",
+        "GMP Training",
         "Staff Readiness",
         "Compliance Coaching",
       ],
       promise:
-        "We empower your team to confidently handle audits and procedures.",
+        "Practical training and audit preparation support.",
       icon: <FaClipboardCheck />,
     },
 
-    {
-      no: "07",
-      title: "ECOMMERCE SERVICES",
-      services: [
-        "Product Listing",
-        "A+ Content Creation",
-        "Product Content Writing",
-        "Ecommerce Marketing",
-      ],
-      promise:
-        "We help build a strong online presence and grow product visibility.",
-      icon: <FaIndustry />,
-    },
   ];
 
   return (
+
     <div className="bg-[#f4f7fb] overflow-hidden">
 
       {/* HEADER */}
@@ -269,30 +189,22 @@ function App() {
             <a href="#services">SERVICES</a>
             <a href="#ai">AI ASSISTANT</a>
             <a href="#contact">CONTACT</a>
-            <a href="#training">TRAINING</a>
+
           </div>
 
-          <div className="flex gap-3">
+          <a
+            href="https://wa.me/919740802199?text=Hi,%20I%20need%20help%20with%20GMP/ISO%20compliance."
+            target="_blank"
+          >
 
-            <button className="bg-blue-900 hover:bg-blue-800 text-white px-5 py-3 rounded-xl font-bold">
-              Book FREE Consultation
+            <button className="bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-xl font-bold flex items-center gap-2">
+
+              <FaWhatsapp />
+              WhatsApp
+
             </button>
 
-            <a
-              href="https://wa.me/919740802199?text=Hi,%20I%20need%20help%20with%20GMP/ISO%20compliance."
-              target="_blank"
-            >
-
-              <button className="bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-xl font-bold flex items-center gap-2">
-
-                <FaWhatsapp />
-                WhatsApp
-
-              </button>
-
-            </a>
-
-          </div>
+          </a>
 
         </div>
 
@@ -301,17 +213,16 @@ function App() {
       {/* HERO */}
 
       <section
-  className="relative text-white min-h-screen flex items-center"
-  style={{
-    backgroundImage: `linear-gradient(rgba(2,16,63,0.70), rgba(2,16,63,0.75)), url(${heroImage})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundAttachment: "fixed",
-  }}
-
+        className="relative text-white min-h-screen flex items-center"
+        style={{
+          backgroundImage: `linear-gradient(rgba(2,16,63,0.75), rgba(2,16,63,0.80)), url(${heroImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+        }}
       >
 
-       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 px-6 py-32 items-center relative z-10">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 px-6 py-28 items-center">
 
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -319,30 +230,30 @@ function App() {
             transition={{ duration: 0.7 }}
           >
 
-            <h2 className="text-green-400 text-2xl font-bold">
-              YOUR PARTNER IN
-            </h2>
+            <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
 
-            <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mt-5">
               GMP COMPLIANCE
               <br />
               & REGULATORY
               <br />
-              EXCELLENCE
+              SOLUTIONS
+
             </h1>
 
             <p className="mt-8 text-xl text-gray-200 leading-9">
-              End-to-End Solutions for Pharma, API, Nutraceutical &
-              Healthcare Industries.
+
+              Supporting Pharma, API, Nutraceutical and Healthcare
+              companies with expert-led compliance solutions.
+
             </p>
 
-            <p className="mt-8 text-lg text-gray-200 leading-8">
-              ✅ Serving Pharma & Food Industry Clients
-              <br />
-              💰 Affordable Solutions
-              <br />
-👨‍🔬 Team having expertise with 20+ years of industry experience
-            </p>
+            <div className="mt-10 space-y-4 text-lg">
+
+              <p>✅ GMP & Regulatory Support</p>
+              <p>✅ Audit & Validation Experts</p>
+              <p>✅ 20+ Years Industry Experience</p>
+
+            </div>
 
           </motion.div>
 
@@ -363,11 +274,11 @@ function App() {
               <div>
 
                 <h2 className="text-3xl font-extrabold">
-                  AI GMP ASSISTANT
+                  AI COMPLIANCE ASSISTANT
                 </h2>
 
                 <p className="text-gray-200 mt-2 text-sm leading-7">
-                  Get instant answers to all your Pharma & Food compliance questions — powered by AI + backed by experts.
+                  Get instant regulatory guidance powered by AI + industry experts.
                 </p>
 
               </div>
@@ -403,17 +314,17 @@ function App() {
             />
 
             <textarea
-  value={question}
-  onChange={(e) => {
-    setQuestion(e.target.value);
+              value={question}
+              onChange={(e) => {
+                setQuestion(e.target.value);
 
-    if (e.target.value === "") {
-      setAnswer("");
-    }
-  }}
-  placeholder="Ask GMP, ISO, Validation or Regulatory Question..."
-  className="w-full h-36 mt-6 rounded-2xl bg-white/20 border border-white/20 p-5 text-white placeholder:text-gray-200 outline-none"
-/>
+                if (e.target.value === "") {
+                  setAnswer("");
+                }
+              }}
+              placeholder="Ask GMP, ISO, Validation or Regulatory Question..."
+              className="w-full h-36 mt-6 rounded-2xl bg-white/20 border border-white/20 p-5 text-white placeholder:text-gray-200 outline-none"
+            />
 
             <button
               onClick={askAI}
@@ -425,18 +336,10 @@ function App() {
             </button>
 
             {answer && (
-<div className="bg-white/10 rounded-2xl p-7 mt-6 text-gray-100 leading-8 whitespace-pre-line w-full max-h-[420px] overflow-y-auto">
-              
+
+              <div className="bg-white/10 rounded-2xl p-7 mt-6 text-gray-100 leading-8 whitespace-pre-line w-full max-h-[420px] overflow-y-auto">
 
                 {answer}
-
-                <div className="mt-6 border-t border-white/20 pt-5">
-
-                  <p className="font-bold text-green-300">
-                    ✅ Need expert help? Book FREE consultation
-                  </p>
-
-                </div>
 
               </div>
 
@@ -447,547 +350,213 @@ function App() {
         </div>
 
       </section>
-      {/* TRUST LINE */}
 
-<section className="py-12 bg-white">
+      {/* EXPERT SUPPORT */}
 
-  <div className="max-w-6xl mx-auto px-4 text-center">
+      <section className="py-20 bg-white">
 
-    <h2 className="text-3xl font-extrabold text-blue-950">
-      Serving Pharma & Food Industry Clients
-    </h2>
+        <div className="max-w-6xl mx-auto px-6 text-center">
 
-    <div className="grid md:grid-cols-3 gap-8 mt-10">
+          <h1 className="text-5xl font-extrabold text-blue-950">
+            Expert-Led Support
+          </h1>
 
-      {[
-        "GMP, ISO & FSSAI Expertise",
-        "Practical & Cost-Effective Solutions",
-        "End-to-End Compliance Support",
-      ].map((item, index) => (
+          <p className="mt-8 text-xl leading-10 text-gray-600 max-w-4xl mx-auto">
 
-        <div
-          key={index}
-          className="bg-[#f4f7fb] rounded-2xl py-8 shadow-lg font-bold text-blue-950"
-        >
+            Our team combines 20+ years of industry experience
+            with AI-powered efficiency to deliver faster and smarter
+            compliance solutions.
 
-          ✔ {item}
+          </p>
 
         </div>
 
-      ))}
+      </section>
 
-    </div>
+      {/* SERVICES */}
 
-  </div>
+      <section id="services" className="py-20 bg-[#f8fafc]">
 
-</section>
+        <div className="max-w-7xl mx-auto px-6">
 
-{/* SERVICES */}
+          <div className="text-center">
 
-<section id="services" className="py-20 bg-[#f4f7fb]">
+            <h1 className="text-5xl font-extrabold text-blue-950">
+              Our Services
+            </h1>
 
-  <div className="max-w-7xl mx-auto px-4">
+            <p className="mt-5 text-xl text-gray-600 max-w-3xl mx-auto leading-9">
 
-    <div className="text-center mb-14">
+              End-to-end Pharma, GMP, QA/QC and Regulatory support solutions.
 
-      <h1 className="text-5xl font-extrabold text-blue-950">
-        OUR SERVICES
-      </h1>
+            </p>
 
-      <p className="text-xl text-gray-600 mt-4">
-        Your Needs. Our Expertise. Your Compliance.
-      </p>
+          </div>
 
-    </div>
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-6 mt-16">
 
-    <div className="grid lg:grid-cols-2 gap-6">
+            {services.map((item, index) => (
 
-      {services.map((item, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-[28px] p-7 shadow-md hover:shadow-xl transition-all"
+              >
 
-        <div
-          key={index}
-          className="bg-white rounded-[30px] shadow-lg p-7 border border-gray-100 hover:shadow-2xl transition-all duration-300"
-        >
+                <div className="flex items-center gap-4">
 
-          <div className="flex items-start gap-5">
+                  <div className="bg-blue-900 text-white w-14 h-14 rounded-2xl flex items-center justify-center text-xl font-bold">
+                    {item.no}
+                  </div>
 
-            <div className="bg-blue-900 text-white w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-bold shrink-0">
-              {item.no}
-            </div>
-
-            <div className="flex-1">
-
-              <h2 className="text-2xl font-extrabold text-blue-950">
-                {item.title}
-              </h2>
-
-              <div className="grid md:grid-cols-2 gap-8 mt-5">
-
-                <div>
-
-                  <h3 className="text-green-700 font-bold mb-3">
-                    KEY SERVICES
-                  </h3>
-
-                  <ul className="space-y-2 text-gray-700 leading-7">
-
-                    {item.services.map((service, i) => (
-                      <li key={i}>
-                        • {service}
-                      </li>
-                    ))}
-
-                  </ul>
+                  <h2 className="text-xl font-extrabold text-blue-950 leading-8">
+                    {item.title}
+                  </h2>
 
                 </div>
 
-                <div>
+                <ul className="mt-6 space-y-2 text-gray-700 leading-7">
 
-                  <h3 className="text-blue-900 font-bold mb-3">
-                    OUR PROMISE TO YOU
-                  </h3>
+                  {item.services.map((service, i) => (
+                    <li key={i}>
+                      • {service}
+                    </li>
+                  ))}
 
-                  <p className="text-gray-600 leading-7">
-                    {item.promise}
-                  </p>
+                </ul>
 
-                </div>
+                <p className="mt-6 text-gray-600 leading-7">
+                  {item.promise}
+                </p>
 
               </div>
 
-            </div>
+            ))}
 
           </div>
 
         </div>
 
-      ))}
+      </section>
 
-    </div>
+      {/* TESTIMONIALS */}
 
-    {/* BUTTONS */}
+      <section className="py-20 bg-white">
 
-    <div className="flex flex-wrap justify-center gap-5 mt-14">
+        <div className="max-w-6xl mx-auto px-4 text-center">
 
-      <button className="bg-blue-900 hover:bg-blue-800 text-white px-8 py-4 rounded-2xl font-bold text-lg">
-        Book FREE Consultation
-      </button>
+          <h1 className="text-5xl font-extrabold text-blue-950">
+            WHAT OUR CLIENTS SAY
+          </h1>
+
+          <div className="grid md:grid-cols-3 gap-8 mt-14">
+
+            {[
+              "One Hope Solution helped us pass GMP audit smoothly.",
+              "Very professional and affordable compliance support.",
+              "Best partner for ISO certification.",
+            ].map((review, index) => (
+
+              <div
+                key={index}
+                className="bg-[#f4f7fb] rounded-[30px] p-8 shadow-lg"
+              >
+
+                <p className="text-gray-700 leading-8 text-lg">
+                  “{review}”
+                </p>
+
+              </div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* FLOATING WHATSAPP */}
 
       <a
         href="https://wa.me/919740802199?text=Hi,%20I%20need%20help%20with%20GMP/ISO%20compliance."
         target="_blank"
+        className="fixed bottom-6 right-6 z-50"
       >
 
-        <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-2xl font-bold text-lg">
-          Talk to Expert on WhatsApp
-        </button>
+        <div className="bg-green-500 hover:bg-green-600 px-6 py-4 rounded-full flex items-center gap-3 shadow-2xl">
+
+          <FaWhatsapp className="text-white text-3xl" />
+
+          <span className="text-white font-bold text-lg">
+            Chat on WhatsApp
+          </span>
+
+        </div>
 
       </a>
 
-    </div>
+      {/* FOOTER */}
 
-  </div>
+      <footer
+        id="contact"
+        className="bg-[#02103f] text-white py-14"
+      >
 
-</section>
+        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 px-6">
 
-{/* HOW IT WORKS */}
+          <div>
 
-<section className="py-20 bg-white">
+            <h2 className="text-3xl font-bold">
+              ONE HOPE SOLUTION
+            </h2>
 
-  <div className="max-w-6xl mx-auto px-4 text-center">
+            <p className="mt-5 text-gray-300 leading-8">
+              Integrated GMP & Regulatory Consultancy Services.
+            </p>
 
-    <h1 className="text-5xl font-extrabold text-blue-950">
-      HOW IT WORKS
-    </h1>
-
-    <div className="grid md:grid-cols-3 gap-8 mt-14">
-
-      {[
-        {
-          no: "1",
-          title: "Ask AI or Contact Us",
-          text: "Get instant answers or connect with our experts",
-        },
-
-        {
-          no: "2",
-          title: "Get Free Consultation",
-          text: "We understand requirements & identify gaps",
-        },
-
-        {
-          no: "3",
-          title: "Become Fully Compliant",
-          text: "Achieve GMP / ISO / FSSAI compliance smoothly",
-        },
-
-      ].map((step, index) => (
-
-        <div
-          key={index}
-          className="bg-[#f4f7fb] rounded-[30px] p-10 shadow-lg"
-        >
-
-          <div className="bg-blue-900 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto">
-            {step.no}
           </div>
 
-          <h2 className="text-2xl font-bold text-blue-950 mt-6">
-            {step.title}
-          </h2>
+          <div>
 
-          <p className="text-gray-600 mt-4 leading-7">
-            {step.text}
-          </p>
+            <h2 className="text-2xl font-bold">
+              CONTACT
+            </h2>
 
-        </div>
+            <div className="mt-5 space-y-3 text-gray-300">
 
-      ))}
+              <p>Email: info@onehopesolution.com</p>
+              <p>Website: www.onehopesolution.com</p>
+              <p>Call: +91 9740802199</p>
 
-    </div>
+            </div>
 
-  </div>
+          </div>
 
-</section>
+          <div>
 
-{/* INDUSTRIES */}
+            <h2 className="text-2xl font-bold">
+              BUSINESS HOURS
+            </h2>
 
-<section className="py-20 bg-[#f4f7fb]">
+            <div className="mt-5 space-y-3 text-gray-300">
 
-  <div className="max-w-6xl mx-auto px-4 text-center">
+              <p>Monday - Saturday</p>
+              <p>9:00 AM - 6:00 PM</p>
+              <p>Online Consultation Available</p>
 
-    <h1 className="text-5xl font-extrabold text-blue-950">
-      INDUSTRIES WE SERVE
-    </h1>
-
-    <p className="text-gray-600 text-xl mt-4">
-      Affordable solutions
-    </p>
-
-    <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mt-12">
-
-      {[
-        "Pharma",
-        "API",
-        "Food",
-        "Nutraceuticals",
-        "Healthcare",
-      ].map((industry, index) => (
-
-        <div
-          key={index}
-          className="bg-white rounded-2xl py-8 shadow-lg text-blue-950 font-bold text-xl"
-        >
-
-          {industry}
-
-        </div>
-
-      ))}
-
-    </div>
-
-  </div>
-
-</section>
-{/* AI TRAINING EXPERT */}
-
-<section className="py-20 bg-white">
-
-  <div className="max-w-6xl mx-auto px-6">
-
-    <div className="bg-gradient-to-r from-blue-950 to-blue-800 rounded-[40px] p-12 text-white shadow-2xl">
-
-      <div className="grid lg:grid-cols-2 gap-12 items-center">
-
-        <div>
-
-          <h1 className="text-5xl font-extrabold">
-            🤖 AI Training Expert
-          </h1>
-
-          <p className="mt-6 text-xl leading-9 text-gray-200">
-
-            Learn Pharma GMP, QA/QC, Regulatory Affairs and industry skills with AI-powered guidance.
-
-          </p>
-
-          <div className="mt-8 space-y-4 text-lg leading-8">
-
-            <p>✅ Ask anything</p>
-            <p>✅ Get training</p>
-            <p>✅ Practice concepts</p>
-            <p>✅ Interview preparation</p>
-            <p>✅ Industry basics</p>
+            </div>
 
           </div>
 
         </div>
 
-        <div className="bg-white rounded-[30px] p-8 text-gray-800">
+        <div className="border-t border-white/10 mt-12 pt-8 text-center text-gray-400">
 
-          <h2 className="text-3xl font-extrabold text-blue-950">
-            Want Structured Training?
-          </h2>
-
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-
-            Contact us to enroll in customized Pharma,
-            GMP, QA/QC and Regulatory Affairs training programs.
-
-          </p>
-
-          <div className="flex flex-wrap gap-5 mt-10">
-
-            <button className="bg-blue-900 hover:bg-blue-800 text-white px-8 py-4 rounded-2xl font-bold">
-              Enroll Now
-            </button>
-
-            <a
-              href="https://wa.me/919740802199?text=Hi,%20I%20want%20to%20enroll%20for%20training."
-              target="_blank"
-            >
-
-              <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-2xl font-bold">
-                Contact Us
-              </button>
-
-            </a>
-
-          </div>
+          © 2026 One Hope Solution. All Rights Reserved.
 
         </div>
 
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-{/* HOW WE WORK */}
-
-<section className="py-24 bg-[#f8fafc]">
-
-  <div className="max-w-7xl mx-auto px-6">
-
-    <div className="text-center">
-
-      <h1 className="text-5xl font-extrabold text-blue-950">
-        How We Work
-      </h1>
-
-      <p className="mt-6 text-xl text-gray-600 max-w-3xl mx-auto leading-9">
-
-        A structured and efficient approach to support your
-        compliance and regulatory requirements.
-
-      </p>
-
-    </div>
-
-    <div className="grid lg:grid-cols-5 gap-6 mt-20">
-
-      <div className="bg-white rounded-[30px] p-8 shadow-lg text-center">
-
-        <div className="text-5xl font-extrabold text-green-600">
-          1
-        </div>
-
-        <h3 className="mt-6 text-2xl font-bold text-blue-950">
-          Requirement Discussion
-        </h3>
-
-      </div>
-
-      <div className="bg-white rounded-[30px] p-8 shadow-lg text-center">
-
-        <div className="text-5xl font-extrabold text-green-600">
-          2
-        </div>
-
-        <h3 className="mt-6 text-2xl font-bold text-blue-950">
-          Gap Assessment
-        </h3>
-
-      </div>
-
-      <div className="bg-white rounded-[30px] p-8 shadow-lg text-center">
-
-        <div className="text-5xl font-extrabold text-green-600">
-          3
-        </div>
-
-        <h3 className="mt-6 text-2xl font-bold text-blue-950">
-          Documentation & Compliance
-        </h3>
-
-      </div>
-
-      <div className="bg-white rounded-[30px] p-8 shadow-lg text-center">
-
-        <div className="text-5xl font-extrabold text-green-600">
-          4
-        </div>
-
-        <h3 className="mt-6 text-2xl font-bold text-blue-950">
-          Audit / Regulatory Support
-        </h3>
-
-      </div>
-
-      <div className="bg-white rounded-[30px] p-8 shadow-lg text-center">
-
-        <div className="text-5xl font-extrabold text-green-600">
-          5
-        </div>
-
-        <h3 className="mt-6 text-2xl font-bold text-blue-950">
-          Ongoing Expert Assistance
-        </h3>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-{/* TESTIMONIALS */}
-
-<section className="py-20 bg-white">
-
-  <div className="max-w-6xl mx-auto px-4 text-center">
-
-    <h1 className="text-5xl font-extrabold text-blue-950">
-      WHAT OUR CLIENTS SAY
-    </h1>
-
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-14">
-
-      {[
-        "One Hope Solution helped us pass GMP audit smoothly.",
-        "Very professional and affordable compliance support.",
-        "Best partner for ISO certification.",
-      ].map((review, index) => (
-
-        <div
-          key={index}
-          className="bg-[#f4f7fb] rounded-[30px] p-8 shadow-lg"
-        >
-
-          <p className="text-gray-700 leading-8 text-lg">
-            “{review}”
-          </p>
-
-        </div>
-
-      ))}
-
-    </div>
-
-  </div>
-
-</section>
-
-{/* FLOATING WHATSAPP */}
-
-<a
-  href="https://wa.me/919740802199?text=Hi,%20I%20need%20help%20with%20GMP/ISO%20compliance."
-  target="_blank"
-  className="fixed bottom-6 right-6 z-50"
->
-
-  <div className="bg-green-500 hover:bg-green-600 px-6 py-4 rounded-full flex items-center gap-3 shadow-2xl hover:scale-105 transition-all duration-300">
-
-    <FaWhatsapp className="text-white text-3xl" />
-
-    <span className="text-white font-bold text-lg">
-      Chat on WhatsApp
-    </span>
-
-  </div>
-
-</a>
-{/* FOOTER */}
-
-<footer
-  id="contact"
-  className="bg-[#02103f] text-white py-14"
->
-
-  <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-10 px-6">
-
-    <div>
-
-      <h2 className="text-3xl font-bold">
-        ONE HOPE SOLUTION
-      </h2>
-
-      <p className="mt-5 text-gray-300 leading-8">
-        Integrated Cleanroom, GMP & Regulatory Consultancy Services.
-      </p>
-
-    </div>
-
-    <div>
-
-      <h2 className="text-2xl font-bold">
-        QUICK LINKS
-      </h2>
-
-      <div className="mt-5 space-y-3 text-gray-300">
-
-        <p>Home</p>
-        <p>Services</p>
-        <p>AI Assistant</p>
-        <p>Contact</p>
-
-      </div>
-
-    </div>
-
-    <div>
-
-      <h2 className="text-2xl font-bold">
-        CONTACT
-      </h2>
-
-      <div className="mt-5 space-y-3 text-gray-300">
-
-        <p>Email: info@onehopesolution.com</p>
-        <p>Website: www.onehopesolution.com</p>
-        <p>Call: +91 9740802199</p>
-
-      </div>
-
-    </div>
-
-    <div>
-
-      <h2 className="text-2xl font-bold">
-        BUSINESS HOURS
-      </h2>
-
-      <div className="mt-5 space-y-3 text-gray-300">
-
-        <p>Monday - Saturday</p>
-        <p>9:00 AM - 6:00 PM</p>
-        <p>Online Consultation Available</p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-  <div className="border-t border-white/10 mt-12 pt-8 text-center text-gray-400">
-
-    © 2026 One Hope Solution. All Rights Reserved.
-
-  </div>
-
-</footer>
+      </footer>
 
     </div>
   );
