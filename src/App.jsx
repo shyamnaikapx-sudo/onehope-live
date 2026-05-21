@@ -278,7 +278,7 @@ function App() {
                 </h2>
 
                 <p className="text-gray-200 mt-2 text-sm leading-7">
-                  Get instant regulatory guidance powered by AI + industry experts.
+                  Get instant regulatory guidance with AI-assisted support and industry expertise.
                 </p>
 
               </div>
@@ -312,39 +312,97 @@ function App() {
               onChange={(e) => setEmail(e.target.value)}
               className="w-full rounded-2xl bg-white/20 border border-white/20 p-4 text-white placeholder:text-gray-200 outline-none mt-4"
             />
+<div className="mt-6">
 
-            <textarea
-              value={question}
-              onChange={(e) => {
-                setQuestion(e.target.value);
+  <p className="text-gray-200 text-sm mb-3">
+    Select support type
+  </p>
 
-                if (e.target.value === "") {
-                  setAnswer("");
-                }
-              }}
-              placeholder="Ask GMP, ISO, Validation or Regulatory Question..."
-              className="w-full h-36 mt-6 rounded-2xl bg-white/20 border border-white/20 p-5 text-white placeholder:text-gray-200 outline-none"
-            />
+  <select
+    className="w-full rounded-2xl bg-white/20 border border-white/20 p-4 text-white outline-none"
+  >
 
-            <button
-              onClick={askAI}
-              className="bg-green-600 hover:bg-green-700 w-full py-4 rounded-2xl text-lg font-bold mt-6 transition-all"
-            >
+    <option className="text-black">
+      GMP Guidance
+    </option>
 
-              {loading ? "Thinking..." : "ASK AI CONSULTANT"}
+    <option className="text-black">
+      QA/QC Support
+    </option>
 
-            </button>
+    <option className="text-black">
+      Regulatory Affairs
+    </option>
 
-            {answer && (
+    <option className="text-black">
+      Audit Preparation
+    </option>
 
-              <div className="bg-white/10 rounded-2xl p-7 mt-6 text-gray-100 leading-8 whitespace-pre-line w-full max-h-[420px] overflow-y-auto">
+    <option className="text-black">
+      Interview Preparation
+    </option>
 
-                {answer}
+    <option className="text-black">
+      Industry Basics
+    </option>
 
-              </div>
+  </select>
 
-            )}
+</div>
+<textarea
+  value={question}
+  onChange={(e) => {
+    setQuestion(e.target.value);
 
+    if (e.target.value === "") {
+      setAnswer("");
+    }
+  }}
+  placeholder="Ask GMP, QA/QC, Validation, Regulatory or Interview Questions..."
+  className="w-full h-36 mt-6 rounded-2xl bg-white/20 border border-white/20 p-5 text-white placeholder:text-gray-200 outline-none"
+/>
+
+<div className="flex flex-wrap gap-3 mt-4">
+
+  {[
+    "GMP Interview Questions",
+    "Validation Guidance",
+    "CAPA Example",
+    "QA/QC Training",
+  ].map((item, index) => (
+
+    <button
+      key={index}
+      onClick={() => setQuestion(item)}
+      className="bg-white/10 hover:bg-white/20 text-sm px-4 py-2 rounded-full transition-all"
+    >
+
+      {item}
+
+    </button>
+
+  ))}
+
+</div>
+
+<button
+  onClick={askAI}
+  className="bg-green-600 hover:bg-green-700 w-full py-4 rounded-2xl text-lg font-bold mt-6 transition-all"
+>
+
+  {loading ? "Thinking..." : "ASK AI CONSULTANT"}
+
+</button>
+
+{answer && (
+
+  <div className="bg-white/10 rounded-2xl p-7 mt-6 text-gray-100 leading-8 whitespace-pre-line w-full max-h-[420px] overflow-y-auto">
+
+    {answer}
+
+  </div>
+
+)}
           </motion.div>
 
         </div>
@@ -372,7 +430,42 @@ function App() {
         </div>
 
       </section>
+{/* INDUSTRIES */}
 
+<section className="py-16 bg-[#f8fafc]">
+
+  <div className="max-w-6xl mx-auto px-6 text-center">
+
+    <h1 className="text-4xl font-extrabold text-blue-950">
+      Industries We Support
+    </h1>
+
+    <div className="grid md:grid-cols-5 gap-5 mt-12">
+
+      {[
+        "Pharma",
+        "API",
+        "Nutraceutical",
+        "Food",
+        "Healthcare",
+      ].map((item, index) => (
+
+        <div
+          key={index}
+          className="bg-white rounded-2xl py-7 shadow-md font-bold text-blue-950 text-lg"
+        >
+
+          {item}
+
+        </div>
+
+      ))}
+
+    </div>
+
+  </div>
+
+</section>
       {/* SERVICES */}
 
       <section id="services" className="py-20 bg-[#f8fafc]">
@@ -437,6 +530,56 @@ function App() {
         </div>
 
       </section>
+{/* HOW WE WORK */}
+
+<section className="py-20 bg-[#f8fafc]">
+
+  <div className="max-w-7xl mx-auto px-6">
+
+    <div className="text-center">
+
+      <h1 className="text-5xl font-extrabold text-blue-950">
+        How We Work
+      </h1>
+
+      <p className="mt-5 text-xl text-gray-600">
+        A structured and efficient compliance approach.
+      </p>
+
+    </div>
+
+    <div className="grid lg:grid-cols-5 md:grid-cols-2 gap-6 mt-16">
+
+      {[
+        "Discussion",
+        "Gap Assessment",
+        "Documentation",
+        "Audit Support",
+        "Ongoing Assistance",
+      ].map((step, index) => (
+
+        <div
+          key={index}
+          className="bg-white rounded-[28px] p-7 shadow-md text-center"
+        >
+
+          <div className="text-5xl font-extrabold text-green-600">
+            {index + 1}
+          </div>
+
+          <h3 className="mt-5 text-xl font-bold text-blue-950 leading-8">
+            {step}
+          </h3>
+
+        </div>
+
+      ))}
+
+    </div>
+
+  </div>
+
+</section>
 
       {/* TESTIMONIALS */}
 
