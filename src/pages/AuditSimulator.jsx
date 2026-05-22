@@ -10,8 +10,60 @@ export default function AuditSimulator() {
     useState(0);
 
   const [answer, setAnswer] = useState("");
+const [answers, setAnswers] = useState({});
 
-  const currentQuestions =
+const [finalReport, setFinalReport] = useState("");
+
+const [loading, setLoading] = useState(false);
+ const generateFinalReport = async (
+  finalAnswers
+) => {
+
+    try {
+
+      setLoading(true);
+
+      const response = await fetch(
+
+        "http://localhost:5000/api/final-audit-report",
+
+        {
+
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json",
+          },
+
+          body: JSON.stringify({
+
+            auditType,
+
+            answers: finalAnswers,
+
+          }),
+
+        }
+
+      );
+
+      const data = await response.json();
+
+      setFinalReport(data.result);
+
+      setLoading(false);
+
+    } catch (error) {
+
+      console.log(error);
+
+      setLoading(false);
+
+    }
+
+  };
+ 
+const currentQuestions =
     auditType === "WHO GMP"
       ? auditQuestions.whoGmp
       : auditType === "USFDA"
@@ -156,51 +208,156 @@ export default function AuditSimulator() {
                   className="w-full mt-8 h-40 rounded-2xl border border-gray-300 p-5 outline-none text-lg"
                 />
 
-                <div className="flex justify-between mt-8">
+<div className="flex justify-between mt-8">
 
-                  <button
-                    disabled={currentQuestionIndex === 0}
-                    onClick={() =>
-                      setCurrentQuestionIndex(
-                        currentQuestionIndex - 1
-                      )
-                    }
-                    className="bg-gray-300 hover:bg-gray-400 px-8 py-4 rounded-2xl font-bold"
-                  >
+  <button
+    disabled={currentQuestionIndex === 0}
+    onClick={() =>
+      setCurrentQuestionIndex(
+        currentQuestionIndex - 1
+      )
+    }
+    className="bg-gray-300 hover:bg-gray-400 px-8 py-4 rounded-2xl font-bold"
+  >
 
-                    Previous
+    Previous
 
-                  </button>
+  </button>
 
-                  <button
-                    onClick={() => {
+  {currentQuestionIndex <
+  currentQuestions.length - 1 ? (
 
-                      if (
-                        currentQuestionIndex <
-                        currentQuestions.length - 1
-                      ) {
+    <button
+      onClick={() => {
 
-                        setCurrentQuestionIndex(
-                          currentQuestionIndex + 1
-                        );
+        setAnswers({
 
-                        setAnswer("");
+          ...answers,
 
-                      }
+          [currentQuestion.id]: {
 
-                    }}
-                    className="bg-blue-950 hover:bg-blue-800 text-white px-8 py-4 rounded-2xl font-bold"
-                  >
+            question:
+              currentQuestion.question,
 
-                    Next Question
+            answer: answer,
 
-                  </button>
+          },
 
-                </div>
+        });
+
+        setCurrentQuestionIndex(
+          currentQuestionIndex + 1
+        );
+
+        setAnswer("");
+
+      }}
+
+      className="bg-blue-950 hover:bg-blue-800 text-white px-8 py-4 rounded-2xl font-bold"
+    >
+
+      Next Question
+
+    </button>
+
+  ) : (
+
+    <button
+      onClick={() => {
+
+        const updatedAnswers = {
+
+          ...answers,
+
+          [currentQuestion.id]: {
+
+            question:
+              currentQuestion.question,
+
+            answer: answer,
+
+          },
+
+        };
+
+        setAnswers(updatedAnswers);
+
+        generateFinalReport(updatedAnswers);
+
+      }}
+
+      className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-2xl font-bold"
+    >
+
+      {loading ? (
+
+  <div className="flex items-center gap-3">
+
+    <div className="w-5 h-5 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+
+    <span>
+
+      AI analyzing audit responses...
+
+    </span>
+
+  </div>
+
+) : (
+
+  "Generate Final Audit Report"
+
+)}
+
+    </button>
+
+  )}
+
+</div>
 
               </div>
 
             </div>
+
+          </div>
+
+        )}
+
+        {finalReport && (
+
+          <div className="mt-20 bg-white rounded-[35px] p-10 shadow-xl">
+
+            <h2 className="text-5xl font-extrabold text-blue-950">
+
+              Final Audit Report
+
+            </h2>
+
+            <div className="mt-10 bg-[#f4f7fb] rounded-[25px] p-8 border border-gray-200">
+
+  <div className="flex items-center justify-between mb-8">
+
+    <h3 className="text-3xl font-extrabold text-blue-950">
+
+      AI Audit Evaluation
+
+    </h3>
+
+    <div className="bg-green-100 text-green-700 px-6 py-3 rounded-full font-bold text-lg">
+
+      Audit Report
+
+    </div>
+
+  </div>
+
+  <div className="whitespace-pre-wrap text-lg leading-9 text-gray-700">
+
+    {finalReport}
+
+  </div>
+
+</div>
 
           </div>
 
