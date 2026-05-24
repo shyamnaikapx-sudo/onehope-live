@@ -1,3 +1,4 @@
+import InteractiveAudit from "./pages/InteractiveAudit";
 import {
   Routes,
   Route,
@@ -11,7 +12,10 @@ function App() {
   return (
 
     <Routes>
-
+<Route
+  path="/interactive-ai-audit"
+  element={<InteractiveAudit />}
+/>
       <Route
         path="/"
         element={<HomePage />}

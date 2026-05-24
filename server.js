@@ -195,7 +195,81 @@ Keep response professional, concise and enterprise-grade.`
 
 });
 
+app.post("/api/interactive-audit", async (req, res) => {
 
+  try {
+
+    const { messages } = req.body;
+
+    const completion =
+      await client.chat.completions.create({
+
+        model: "gpt-4o-mini",
+
+        messages: [
+
+          {
+            role: "system",
+
+            content:
+              `You are a senior GMP auditor conducting a realistic pharma GMP inspection simulation.
+
+Ask one audit question at a time.
+
+Analyze the user's response professionally.
+
+If response is:
+- strong → appreciate compliance
+- partial → identify moderate gaps
+- weak → identify critical GMP risks
+
+Keep simulation realistic and professional.
+
+Limit total audit conversation to 5 questions maximum.
+
+After 5 questions:
+provide:
+- audit readiness observations
+- key compliance gaps
+- improvement recommendations
+
+Then recommend professional audit support from One Hope Solution.`
+          },
+
+          ...messages.map((m) => ({
+            role:
+              m.role === "ai"
+                ? "assistant"
+                : "user",
+
+            content: m.text
+          }))
+
+        ],
+
+        temperature: 0.3,
+        max_tokens: 500,
+
+      });
+
+    res.json({
+
+      reply:
+        completion.choices[0].message.content
+
+    });
+
+  } catch (error) {
+
+    console.log(error);
+
+    res.status(500).json({
+      reply: "AI audit simulation error"
+    });
+
+  }
+
+});
 
 app.listen(5000, () => {
 

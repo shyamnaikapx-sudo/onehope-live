@@ -87,7 +87,12 @@ function HomePage() {
             <a href="/">HOME</a>
 
             <a href="#services">SERVICES</a>
-
+<a
+  href="/interactive-ai-audit"
+  className="hover:text-green-400 transition"
+>
+  INTERACTIVE AI AUDIT
+</a>
             <a href="/ai-audit-simulator">
               AUDIT SIMULATOR
             </a>
@@ -383,7 +388,11 @@ function HomePage() {
           title: "AI Audit Simulator",
           desc: "Simulate real GMP audits",
         },
-
+  {
+    title: "Interactive AI Audit Simulator",
+    desc:
+      "Experience realistic GMP audit conversations with AI-powered compliance analysis and gap assessment.",
+  },
         {
           title: "AI Training",
           desc: "Interactive GMP learning",
@@ -485,6 +494,15 @@ function HomePage() {
               </div>
 
               <a href="/ai-audit-simulator">
+              <a href="/interactive-ai-audit">
+
+  <button className="bg-white text-blue-950 hover:bg-gray-100 px-7 py-4 rounded-2xl font-bold text-lg shadow-xl">
+
+    Interactive AI Audit Simulator
+
+  </button>
+
+</a>
 
                 <button className="w-full mt-8 bg-green-500 hover:bg-green-600 py-4 rounded-2xl text-lg font-bold text-white">
 
@@ -501,6 +519,58 @@ function HomePage() {
         </div>
 
       </section>
+      <div className="bg-white rounded-[35px] shadow-xl p-10 mt-16">
+
+  <h2 className="text-4xl font-extrabold text-blue-950 text-center">
+
+    AI-Powered Audit Intelligence
+
+  </h2>
+
+  <p className="mt-8 text-lg leading-9 text-gray-700 text-center max-w-5xl mx-auto">
+
+    AI performs gap assessment based on your responses,
+    and where required, it can request supporting documents
+    as objective evidence for review and validation.
+
+  </p>
+
+  <p className="mt-8 text-lg leading-9 text-gray-700 text-center max-w-5xl mx-auto">
+
+    We develop customized AI audit simulators based on
+    your specific audit requirements, enabling organizations
+    to simulate real audit scenarios and improve compliance readiness.
+
+  </p>
+
+  <div className="flex flex-wrap justify-center gap-5 mt-10">
+
+    <a href="/interactive-ai-audit">
+
+      <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-2xl font-bold text-lg">
+
+        Launch Interactive AI Audit
+
+      </button>
+
+    </a>
+
+    <a
+      href="https://wa.me/919740802199"
+      target="_blank"
+    >
+
+      <button className="bg-blue-950 hover:bg-blue-900 text-white px-8 py-4 rounded-2xl font-bold text-lg">
+
+        Talk to AI Audit Expert
+
+      </button>
+
+    </a>
+
+  </div>
+
+</div>
 
       {/* SERVICES */}
 
@@ -648,6 +718,34 @@ function HomePage() {
         </div>
 
       </section>
+      <div className="bg-blue-950 text-white rounded-[35px] p-12 text-center mt-20">
+
+  <h2 className="text-5xl font-extrabold">
+
+    Experience Realistic AI GMP Audits
+
+  </h2>
+
+  <p className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto leading-9">
+
+    Simulate real auditor conversations,
+    identify compliance gaps and improve
+    inspection readiness with AI-powered
+    audit simulations.
+
+  </p>
+
+  <a href="/interactive-ai-audit">
+
+    <button className="bg-green-500 hover:bg-green-600 px-10 py-5 rounded-2xl font-bold text-xl mt-10">
+
+      Launch Interactive Audit Simulator
+
+    </button>
+
+  </a>
+
+</div>
 {/* GLOBAL TRUST */}
 
 <section className="py-16 bg-white">
