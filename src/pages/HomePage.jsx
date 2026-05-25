@@ -113,12 +113,14 @@ function HomePage() {
   className="relative text-white min-h-screen flex items-center"
   style={{
     backgroundImage: `linear-gradient(rgba(2,16,63,0.82), rgba(2,16,63,0.86)), url(${heroImage})`,
+
     backgroundSize: "cover",
     backgroundPosition: "center",
   }}
+  
 >
 
-  <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 px-6 py-24 items-center">
+  <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 px-6 py-16 items-center">
 
     {/* LEFT */}
 
@@ -130,7 +132,7 @@ function HomePage() {
 
       </div>
 
-      <h1 className="mt-6 text-5xl md:text-6xl font-extrabold leading-tight">
+      <h1 className="mt-6 text-4xl md:text-5xl font-bold leading-tight">
 
         AI-Powered Global
         <br />
@@ -140,7 +142,7 @@ function HomePage() {
 
       </h1>
 
-      <p className="mt-8 text-xl text-gray-200 leading-9">
+      <p className="mt-8 text-base md:text-lg text-gray-200 leading-8 max-w-2xl">
 
         Simulate GMP audits, get instant compliance insights,
         and prepare for global regulatory success.
@@ -154,7 +156,7 @@ function HomePage() {
         </p>
 
         <p>
-          👨‍🔬 Team having more than 15 years of experience in Pharma & Food industries
+          👨‍🔬 Team having more than 18 years of experience in Pharma & Food industries
         </p>
 
       </div>
@@ -311,7 +313,7 @@ function HomePage() {
 
       <div>
 
-        <h2 className="text-5xl font-extrabold text-blue-950 leading-tight">
+        <h2 className="text-3xl md:text-4xl font-bold text-blue-950 leading-tight">
 
           We Are Not Just Consultants.
           <br />
@@ -319,7 +321,7 @@ function HomePage() {
 
         </h2>
 
-        <p className="mt-8 text-lg leading-9 text-gray-700">
+        <p className="mt-8 text-base leading-8 text-gray-700">
 
           One Hope Solution delivers AI-powered GMP,
           regulatory and compliance solutions for
@@ -328,7 +330,7 @@ function HomePage() {
 
         </p>
 
-        <p className="mt-6 text-lg leading-9 text-gray-700">
+        <p className="mt-6 text-base leading-8 text-gray-700">
 
           We combine industry expertise with
           intelligent AI-driven systems to improve
@@ -343,7 +345,7 @@ function HomePage() {
 
         <div className="bg-blue-50 rounded-3xl p-8 text-center">
 
-          <h3 className="text-5xl font-extrabold text-blue-950">
+          <h3 className="text-3xl font-extrabold text-blue-950">
 
             18+
 
@@ -412,63 +414,7 @@ function HomePage() {
   </div>
 
 </section>
-{/* PROBLEM SOLUTION */}
 
-<section className="py-20 bg-white">
-
-  <div className="max-w-6xl mx-auto px-6 text-center">
-
-    <h1 className="text-4xl font-extrabold text-blue-950">
-
-      Pharma Compliance Is Complex
-
-    </h1>
-
-    <p className="mt-6 text-xl text-gray-600 leading-9">
-
-      Manual audit preparation and regulatory compliance
-      processes consume time, resources and increase
-      inspection risks.
-
-    </p>
-
-    <div className="grid md:grid-cols-3 gap-6 mt-14">
-
-      <div className="bg-[#f8fafc] rounded-[30px] p-8">
-
-        <h3 className="text-red-500 text-2xl font-bold">
-          ❌ Delayed Audit Preparation
-        </h3>
-
-      </div>
-
-      <div className="bg-[#f8fafc] rounded-[30px] p-8">
-
-        <h3 className="text-red-500 text-2xl font-bold">
-          ❌ Dependency on Experts
-        </h3>
-
-      </div>
-
-      <div className="bg-[#f8fafc] rounded-[30px] p-8">
-
-        <h3 className="text-red-500 text-2xl font-bold">
-          ❌ Risk of Non-Compliance
-        </h3>
-
-      </div>
-
-    </div>
-
-    <div className="mt-12 inline-block bg-green-100 text-green-700 px-8 py-4 rounded-full font-bold text-lg">
-
-      ✅ Now Simplified with AI
-
-    </div>
-
-  </div>
-
-</section>
 {/* CORE FEATURES */}
 
 <section className="py-20 bg-[#f8fafc]">
@@ -477,7 +423,7 @@ function HomePage() {
 
     <div className="text-center">
 
-      <h1 className="text-5xl font-extrabold text-blue-950">
+      <h1 className="text-xl font-extrabold text-blue-950">
 
         AI-Powered Compliance Tools
 
@@ -485,7 +431,7 @@ function HomePage() {
 
     </div>
 
-    <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6 mt-16">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 mt-14">
 
       {[
         {
@@ -494,16 +440,16 @@ function HomePage() {
         },
 
         {
-          title: "AI Audit Simulator",
+          title: "Quick Audit Check",
           desc: "Simulate real GMP audits",
         },
   {
-    title: "Interactive AI Audit Simulator",
+    title: "Interactive AI Auditor",
     desc:
       "Experience realistic GMP audit conversations with AI-powered compliance analysis and gap assessment.",
   },
         {
-          title: "AI Training",
+          title: "GMP Training AI",
           desc: "Interactive GMP learning",
         },
 
@@ -516,16 +462,16 @@ function HomePage() {
 
         <div
           key={index}
-          className="bg-white rounded-[30px] p-8 shadow-md"
+          className="bg-white rounded-2xl p-5 shadow-md min-h-[190px] w-full"
         >
 
-          <h2 className="text-2xl font-extrabold text-blue-950">
+          <h2 className="text-lg font-bold text-blue-950 leading-7">
 
             {item.title}
 
           </h2>
 
-          <p className="mt-5 text-gray-600 leading-8">
+          <p className="mt-3 text-sm text-gray-600 leading-6">
 
             {item.desc}
 
@@ -548,7 +494,7 @@ function HomePage() {
 
         <div className="max-w-7xl mx-auto px-6">
 
-          <div className="bg-gradient-to-r from-blue-950 to-[#0f2f75] rounded-[40px] p-10 lg:p-14 grid lg:grid-cols-2 gap-14 items-center shadow-2xl">
+          <div className="bg-gradient-to-r from-blue-950 to-[#0f2f75] rounded-[40px] p-8 md:p-10 grid lg:grid-cols-2 gap-14 items-center shadow-2xl">
 
             <div>
 
@@ -558,13 +504,13 @@ function HomePage() {
 
               </div>
 
-              <h1 className="mt-6 text-5xl font-extrabold text-white leading-tight">
+              <h1 className="mt-6 text-3xl md:text-4xl font-bold text-white leading-tight">
 
                 AI Audit Simulator
 
               </h1>
 
-              <p className="mt-6 text-lg text-gray-200 leading-9">
+              <p className="mt-6 text-base text-gray-200 leading-8">
 
                 Practice WHO GMP & USFDA inspections using AI-powered
                 audit simulations with instant audit evaluation,
@@ -574,7 +520,7 @@ function HomePage() {
 
             </div>
 
-            <div className="bg-white rounded-[35px] p-8 shadow-2xl">
+            <div className="bg-white rounded-2xl p-8 shadow-2xl">
 
               <h2 className="text-3xl font-extrabold text-blue-950">
 
@@ -692,7 +638,7 @@ function HomePage() {
 
           <div className="text-center">
 
-            <h1 className="text-5xl font-extrabold text-blue-950">
+            <h1 className="text-3xl md:text-4xl font-bold text-blue-950">
 
               Our Services
 
@@ -827,7 +773,7 @@ function HomePage() {
         </div>
 
       </section>
-      <div className="bg-blue-950 text-white rounded-[35px] p-12 text-center mt-20">
+      <div className="bg-blue-950 text-white rounded-[35px] p-12 text-center mt-12">
 
   <h2 className="text-5xl font-extrabold">
 
@@ -846,7 +792,7 @@ function HomePage() {
 
   <a href="/interactive-ai-audit">
 
-    <button className="bg-green-500 hover:bg-green-600 px-10 py-5 rounded-2xl font-bold text-xl mt-10">
+    <button className="bg-green-500 hover:bg-green-600 px-6 py-3 rounded-2xl font-bold text-base mt-10">
 
       Launch Interactive Audit Simulator
 
@@ -894,7 +840,7 @@ function HomePage() {
 
           </div>
 
-          <div className="grid lg:grid-cols-5 md:grid-cols-2 gap-5 mt-14">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 mt-14">
 
             {[
               "Discussion",
@@ -1037,35 +983,7 @@ function HomePage() {
   </div>
 
 </section>
-<div className="bg-green-500 rounded-[35px] p-12 text-center text-white">
 
-  <h2 className="text-5xl font-extrabold">
-
-    Need GMP or Regulatory Support?
-
-  </h2>
-
-  <p className="mt-6 text-xl">
-
-    Get a free compliance discussion with One Hope Solution.
-
-  </p>
-
-  <div className="flex flex-wrap justify-center gap-5 mt-10">
-
-    <a href="https://wa.me/919740802199">
-
-      <button className="bg-white text-green-700 px-8 py-4 rounded-2xl font-bold text-lg">
-
-        Chat on WhatsApp
-
-      </button>
-
-    </a>
-
-  </div>
-
-</div>
       {/* FOOTER */}
 
       <footer

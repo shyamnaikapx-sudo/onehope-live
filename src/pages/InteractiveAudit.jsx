@@ -174,7 +174,7 @@ if (
 
     <div className="text-center">
 
-      <h2 className="text-4xl font-extrabold text-blue-950">
+      <h2 className="text-2xl md:text-3xl font-extrabold text-blue-950">
 
         Get Your AI Audit Assessment Summary
 
@@ -260,7 +260,7 @@ if (
 
     <div className="text-center mt-10">
 
-      <button className="bg-green-500 hover:bg-green-600 text-white px-10 py-5 rounded-2xl font-bold text-xl">
+      <button className="bg-green-500 hover:bg-green-600 text-white px-10 py-5 rounded-2xl font-bold text-base">
 
         Generate My Audit Report
 
@@ -275,7 +275,7 @@ if (
 
         <div className="bg-blue-950 rounded-[35px] text-white p-10 mt-16 text-center">
 
-          <h2 className="text-4xl font-extrabold">
+          <h2 className="text-4xl font-bold">
 
             Need Complete Audit Support?
 
